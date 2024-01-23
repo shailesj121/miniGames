@@ -1,0 +1,262 @@
+
+<!-- saved from url=(0037)https://whoisshailesh.in/games/bingo/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Bingo </title>
+  <!--  <script src="./bingojavascript/bingoscript.js"></script> -->
+<style>
+div{
+    
+}
+p{ cursor: pointer;
+padding: 10px;
+
+}
+div{
+display: flex;
+flex-wrap: wrap;
+width:100%;
+aligh-item: center;
+justify-content: center;
+max-width: 400px;
+position: relative;
+overflow: hidden;
+}
+span{
+width:19%;
+
+}
+span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    padding: 10px 0px;
+    height: 35px;
+}
+.iio div {
+    width: 300%;
+    height: 2px;
+    background: red;
+    display: none;
+}
+
+</style></head>
+
+
+
+
+<body>
+<div style="float:left">
+    <h1>Bingo
+<div class="iio">
+    <div class="fnk" id="blp1" style="position: absolute; rotate: 35deg; top: 145px;"></div>
+    <div class="fnk" id="blp2" style="position: absolute; rotate: 143deg; top: 145px;"></div>
+    <div class="fnk" id="blp3" style="position: absolute; top: 10%;"></div>
+    <div class="fnk" id="blp4" style="position: absolute; top: 30%;"></div>
+    <div class="fnk" id="blp5" style="position: absolute; top: 50%;"></div>
+    <div class="fnk" id="blp6" style="position: absolute; top: 70%;"></div>
+    <div class="fnk" id="blp7" style="position: absolute; top: 90%;"></div>
+    <div class="fnk" id="blp8" style="position: absolute; top: 50%; left: -155px; rotate: 90deg;"></div>
+    <div class="fnk" id="blp9" style="position: absolute; top: 50%; left: -80px; rotate: 90deg;"></div>
+    <div class="fnk" id="blp10" style="position: absolute; top: 50%; left: -0px; rotate: 90deg;"></div>
+    <div class="fnk" id="blp11" style="position: absolute; top: 50%; left: 80px; rotate: 90deg;"></div>
+    <div class="fnk" id="blp12" style="position: absolute; top: 50%; left: 155px; rotate: 90deg;"></div>
+            <span id="o1">1</span> 
+            <span id="o2">2</span> 
+            <span id="o3">3</span> 
+            <span id="o4">4</span> 
+            <span id="o5">5</span> 
+            <span id="o6">6</span> 
+             <span id="o21">7</span> 
+            <span id="o22">8</span> 
+            <span id="o23">9</span> 
+            <span id="o17">10</span>  
+            <span id="o24">11</span> 
+            <span id="o25">12</span> 
+            <span id="o13">13</span> 
+            <span id="o15">15</span> 
+            <span id="o16">16</span> 
+            <span id="o10">14</span> 
+            <span id="o11">18</span> 
+            <span id="o7">17</span> 
+            <span id="o8">21</span>
+            <span id="o14">22</span> 
+            <span id="o12">23</span> 
+            <span id="o19">19</span> 
+            <span id="o20">20</span> 
+            <span id="o9">24</span> 
+            <span id="o18">25</span>  
+</div>
+
+<div style="margin-top: 40px;">
+	<p onclick="b01()" id="b01">B</p> <p onclick="b02()" id="b02">I</p> <p onclick="b03()" id="b03">N</p> <p onclick="b04()" id="b04">G</p> <p onclick="b05()" id="b05">O</p>
+	</div>
+</h1>
+<div>
+	<button onclick="vnm()" id="vnm">ENTER NUMBERS</button>
+	<button onclick="vnp(), bollk();" id="vnp">PLAY</button>
+
+</div>
+<script type="text/javascript">
+
+function checkbingo(){
+    let nop = document.getElementsByClassName("fnk");
+    for (var i = 0; i < nop.length ; i--) {
+        if (nop[i].style.display === "block") {
+        b01();
+        }
+    }
+} 
+function bollk(){
+    let cop = document.getElementsByTagName("span");
+for(var j = 0; j < cop.length; j++){
+    cop[j].addEventListener("click", (event) => {
+        //use event.target to refer to the clicked element
+        event.target.style.color = "red";
+        checkdiagonal();
+        checkbingo();
+
+});
+};
+};
+
+function vnm(){
+        let cd = document.getElementsByTagName("span");
+        for(var i = 0; i < cd.length; i++){
+            cd[i].innerHTML = "";
+        cd[i].contentEditable='true';
+        cd[i].style.color = "black";
+    };
+};
+function vnp(){
+        let cd = document.getElementsByTagName("span");
+        for(var i = 0; i < cd.length; i++){
+        cd[i].style.color = "black";
+        cd[i].contentEditable='false';
+    };
+    let cop = document.getElementById("vnm"); 
+    cop.style.display = "none";
+    bollk();
+
+
+};
+
+
+function checkdiagonal() {
+    let cop = document.getElementsByTagName("span");
+    if (cop[0].style.color === "red" && cop[6].style.color === "red" && cop[12].style.color === "red" && cop[18].style.color === "red" && cop[24].style.color === "red" ) {
+        let ciop = document.getElementById("blp1");
+        ciop.style.display = "block";
+
+    }
+    if (cop[4].style.color === "red" && cop[8].style.color === "red" && cop[12].style.color === "red" && cop[16].style.color === "red" && cop[20].style.color === "red" ) {
+        let we = document.getElementById("blp2");   
+        we.style.display = "block";
+
+    }
+    if (cop[0].style.color === "red" && cop[1].style.color === "red" && cop[2].style.color === "red" && cop[3].style.color === "red" && cop[4].style.color === "red" ) {
+        let er = document.getElementById("blp3");
+        er.style.display = "block";
+
+    }
+    if (cop[5].style.color === "red" && cop[6].style.color === "red" && cop[7].style.color === "red" && cop[8].style.color === "red" && cop[9].style.color === "red" ) {
+        let rt = document.getElementById("blp4");
+        rt.style.display = "block";
+
+    }
+    if (cop[10].style.color === "red" && cop[11].style.color === "red" && cop[12].style.color === "red" && cop[13].style.color === "red" && cop[14].style.color === "red" ) {
+        let ty = document.getElementById("blp5");
+        ty.style.display = "block";
+
+    }
+     if (cop[15].style.color === "red" && cop[16].style.color === "red" && cop[17].style.color === "red" && cop[18].style.color === "red" && cop[19].style.color === "red" ) {
+        let yu = document.getElementById("blp6");
+        yu.style.display = "block";
+
+    }
+     if (cop[20].style.color === "red" && cop[21].style.color === "red" && cop[22].style.color === "red" && cop[23].style.color === "red" && cop[24].style.color === "red" ) {
+        let ui = document.getElementById("blp7");
+        ui.style.display = "block";
+
+    }
+
+
+
+    if (cop[0].style.color === "red" && cop[5].style.color === "red" && cop[10].style.color === "red" && cop[15].style.color === "red" && cop[20].style.color === "red" ) {
+        let io = document.getElementById("blp8");
+        io.style.display = "block";
+
+    }
+    if (cop[1].style.color === "red" && cop[6].style.color === "red" && cop[11].style.color === "red" && cop[16].style.color === "red" && cop[21].style.color === "red" ) {
+        let as = document.getElementById("blp9");
+        as.style.display = "block";
+
+    }
+     if (cop[2].style.color === "red" && cop[7].style.color === "red" && cop[12].style.color === "red" && cop[17].style.color === "red" && cop[22].style.color === "red" ) {
+        let sd = document.getElementById("blp10");
+        sd.style.display = "block";
+
+    }
+     if (cop[3].style.color === "red" && cop[8].style.color === "red" && cop[13].style.color === "red" && cop[18].style.color === "red" && cop[23].style.color === "red" ) {
+        let df = document.getElementById("blp11");
+        df.style.display = "block";
+
+    }
+    if (cop[4].style.color === "red" && cop[9].style.color === "red" && cop[14].style.color === "red" && cop[19].style.color === "red" && cop[24].style.color === "red" ) {
+        let fg = document.getElementById("blp12");
+        fg.style.display = "block";
+
+    }
+}
+
+
+
+
+function b01() {
+let v = document.getElementById("b01")
+v.style.color = "red";
+
+
+
+
+    
+}
+function b02() {
+let v = document.getElementById("b02")
+v.style.color = "red";
+
+
+    
+}
+function b03() {
+let v = document.getElementById("b03")
+v.style.color = "red";
+
+
+    
+}
+function b04() {
+let v = document.getElementById("b04")
+v.style.color = "red";
+
+
+    
+}
+function b05() {
+let v = document.getElementById("b05")
+v.style.color = "red";
+}
+</script>
+</div>
+
+<div style="float:left; cursor: context-menu;">
+    <h1>How to play</h1>
+     <p style=" cursor: context-menu;">For playing Bingo You need to be two player</p>
+    <p style=" cursor: context-menu;">Click on the button "Enter Numbers"</p>
+    
+</div>
+
+
+
+</body></html>
