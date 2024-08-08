@@ -8,15 +8,15 @@ function checkbingo(){
 } 
 function bollk(){
     let cop = document.getElementsByTagName("span");
-for(var j = 0; j < cop.length; j++){
-    cop[j].addEventListener("click", (event) => {
-        //use event.target to refer to the clicked element
-        event.target.style.color = "red";
-        checkdiagonal();
-        checkbingo();
-
-});
-};
+    for(var j = 0; j < cop.length; j++){
+        cop[j].addEventListener("click", (event) => {
+            //use event.target to refer to the clicked element
+            event.target.style.color = "red";
+            checkdiagonal();
+            checkbingo();
+    
+        });
+    };
 };
 
 function vnm(){
