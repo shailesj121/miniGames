@@ -76,9 +76,7 @@ function checkdiagonal() {
      if (cop[20].style.color === "red" && cop[21].style.color === "red" && cop[22].style.color === "red" && cop[23].style.color === "red" && cop[24].style.color === "red" ) {
         let ui = document.getElementById("blp7");
         ui.style.display = "block";
-
     }
-
 
 
     if (cop[0].style.color === "red" && cop[5].style.color === "red" && cop[10].style.color === "red" && cop[15].style.color === "red" && cop[20].style.color === "red" ) {
@@ -114,33 +112,23 @@ function checkdiagonal() {
 function b01() {
 let v = document.getElementById("b01")
 v.style.color = "red";
-
-
-
-
-    
 }
+
 function b02() {
 let v = document.getElementById("b02")
 v.style.color = "red";
-
-
-    
 }
+
 function b03() {
 let v = document.getElementById("b03")
 v.style.color = "red";
-
-
-    
 }
+
 function b04() {
 let v = document.getElementById("b04")
 v.style.color = "red";
-
-
-    
 }
+
 function b05() {
 let v = document.getElementById("b05")
 v.style.color = "red";
